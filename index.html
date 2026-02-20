@@ -1,0 +1,738 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CDA Lake Trout: Oven • Grill • Pan (Fresh-Catch Recipe Guide)</title>
+  <style>
+    :root{
+      --bg:#071622;
+      --panel:#0b2233;
+      --panel2:#0d2a40;
+      --text:#e9f3ff;
+      --muted:#a9c3da;
+      --accent:#7fe7ff;
+      --accent2:#8bffb0;
+      --warn:#ffd27f;
+      --hot:#ff7f9a;
+      --line:rgba(127,231,255,.18);
+      --shadow: 0 16px 40px rgba(0,0,0,.35);
+      --radius: 18px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:var(--sans);
+      color:var(--text);
+      background:
+        radial-gradient(1100px 700px at 18% 10%, rgba(127,231,255,.12), transparent 60%),
+        radial-gradient(900px 500px at 82% 20%, rgba(139,255,176,.10), transparent 55%),
+        radial-gradient(1200px 800px at 50% 110%, rgba(255,127,154,.08), transparent 55%),
+        linear-gradient(180deg, #06121c, #071622 35%, #06111a);
+      min-height:100vh;
+      overflow-x:hidden;
+    }
+    a{color:var(--accent)}
+    .wrap{max-width:1100px;margin:0 auto;padding:26px 16px 70px}
+    header{
+      background:linear-gradient(180deg, rgba(15,55,82,.55), rgba(10,34,51,.35));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:18px 18px 14px;
+      position:relative;
+      overflow:hidden;
+    }
+    .topRow{
+      display:flex; gap:18px; align-items:center; flex-wrap:wrap;
+    }
+    .badge{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:7px 11px;
+      border:1px solid rgba(127,231,255,.22);
+      background:rgba(127,231,255,.08);
+      border-radius:999px;
+      font-family:var(--mono);
+      font-size:12px;
+      letter-spacing:.3px;
+      color:var(--muted);
+      white-space:nowrap;
+    }
+    h1{
+      margin:10px 0 6px;
+      font-size: clamp(26px, 3.2vw, 44px);
+      line-height:1.08;
+      letter-spacing:-.6px;
+    }
+    .sub{
+      margin:0;
+      color:var(--muted);
+      max-width:70ch;
+      line-height:1.55;
+      font-size:15px;
+    }
+    .quickNav{
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin-top:14px;
+    }
+    .pill{
+      border:1px solid rgba(169,195,218,.22);
+      background:rgba(11,34,51,.5);
+      padding:10px 12px;
+      border-radius:999px;
+      text-decoration:none;
+      color:var(--text);
+      font-size:14px;
+      display:inline-flex; align-items:center; gap:8px;
+      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+    }
+    .pill:hover{
+      transform: translateY(-1px);
+      border-color: rgba(127,231,255,.38);
+      background:rgba(11,34,51,.7);
+    }
+    .grid{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:16px;
+      align-items:stretch;
+    }
+    @media (max-width: 920px){
+      .grid{grid-template-columns:1fr}
+    }
+    .card{
+      background:linear-gradient(180deg, rgba(11,34,51,.78), rgba(9,26,39,.62));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .cardHeader{
+      padding:14px 16px 12px;
+      border-bottom:1px solid rgba(127,231,255,.14);
+      display:flex; align-items:flex-start; justify-content:space-between; gap:12px;
+    }
+    .cardHeader h2{
+      margin:0;
+      font-size:18px;
+      letter-spacing:-.2px;
+    }
+    .cardHeader .hint{
+      color:var(--muted);
+      font-size:12px;
+      font-family:var(--mono);
+      padding:6px 10px;
+      border:1px dashed rgba(169,195,218,.22);
+      border-radius:999px;
+      white-space:nowrap;
+    }
+    .cardBody{padding:14px 16px 16px}
+    .twoCol{
+      display:grid; gap:14px;
+      grid-template-columns: 1fr 1fr;
+    }
+    @media (max-width: 720px){ .twoCol{grid-template-columns:1fr} }
+    .box{
+      border:1px solid rgba(169,195,218,.16);
+      background:rgba(6,18,28,.35);
+      border-radius:14px;
+      padding:12px 12px 10px;
+    }
+    .box h3{
+      margin:0 0 8px;
+      font-size:14px;
+      color:var(--accent);
+      letter-spacing:.2px;
+    }
+    ul{margin:8px 0 0 20px;padding:0}
+    li{margin:6px 0;color:var(--text);line-height:1.45}
+    .muted{color:var(--muted)}
+    .callout{
+      border:1px solid rgba(255,210,127,.18);
+      background:rgba(255,210,127,.08);
+      border-radius:14px;
+      padding:12px;
+      margin-top:12px;
+      color:var(--text);
+    }
+    .callout b{color:var(--warn)}
+    .steps{
+      counter-reset: step;
+      display:grid;
+      gap:10px;
+      margin-top:10px;
+    }
+    .step{
+      display:flex; gap:10px; align-items:flex-start;
+      padding:11px 12px;
+      border-radius:14px;
+      border:1px solid rgba(127,231,255,.14);
+      background:rgba(11,34,51,.35);
+    }
+    .step::before{
+      counter-increment: step;
+      content: counter(step);
+      flex:0 0 auto;
+      width:28px;height:28px;border-radius:10px;
+      display:grid;place-items:center;
+      background:rgba(127,231,255,.14);
+      border:1px solid rgba(127,231,255,.22);
+      font-family:var(--mono);
+      color:var(--accent);
+      font-size:12px;
+    }
+    .step p{margin:0;line-height:1.5;color:var(--text)}
+    .fine{
+      font-size:12.5px;
+      color:var(--muted);
+      line-height:1.55;
+    }
+    .footer{
+      margin-top:18px;
+      padding:14px 16px;
+      border-radius:var(--radius);
+      border:1px solid rgba(169,195,218,.14);
+      background:rgba(6,18,28,.28);
+      display:flex; gap:12px; flex-wrap:wrap; align-items:center; justify-content:space-between;
+    }
+    .kbd{
+      font-family:var(--mono);
+      font-size:12px;
+      border:1px solid rgba(169,195,218,.22);
+      padding:6px 9px;
+      border-radius:10px;
+      background:rgba(11,34,51,.35);
+      color:var(--muted);
+    }
+
+    /* Floating background bubbles */
+    .bubbles{
+      position:absolute; inset:0;
+      pointer-events:none;
+      opacity:.55;
+      filter: drop-shadow(0 6px 14px rgba(0,0,0,.25));
+    }
+    .bubbles circle{
+      fill: rgba(127,231,255,.18);
+      stroke: rgba(127,231,255,.25);
+      stroke-width:1;
+      animation: rise 7.5s linear infinite;
+    }
+    .bubbles circle:nth-child(2){animation-duration:9.2s; animation-delay:-2.4s; fill:rgba(139,255,176,.14); stroke:rgba(139,255,176,.22)}
+    .bubbles circle:nth-child(3){animation-duration:10.6s; animation-delay:-6.1s; fill:rgba(255,127,154,.12); stroke:rgba(255,127,154,.18)}
+    .bubbles circle:nth-child(4){animation-duration:8.4s; animation-delay:-4.0s}
+    .bubbles circle:nth-child(5){animation-duration:11.0s; animation-delay:-8.2s; fill:rgba(127,231,255,.14)}
+    @keyframes rise{
+      0%{transform: translateY(40px); opacity:.0}
+      10%{opacity:.9}
+      100%{transform: translateY(-220px); opacity:0}
+    }
+
+    /* Fish mascot */
+    .mascot{
+      width:260px; max-width:100%;
+      aspect-ratio: 13 / 6;
+      border-radius:16px;
+      border:1px solid rgba(127,231,255,.18);
+      background:rgba(6,18,28,.22);
+      overflow:hidden;
+      position:relative;
+    }
+    .mascot svg{width:100%;height:100%;display:block}
+    .swim{
+      animation: swim 3.8s ease-in-out infinite;
+      transform-origin: 40% 50%;
+    }
+    @keyframes swim{
+      0%,100%{transform: translateX(-2px) rotate(-1deg)}
+      50%{transform: translateX(8px) rotate(1.5deg)}
+    }
+    .tail{
+      animation: wag .45s ease-in-out infinite;
+      transform-origin: 78% 50%;
+    }
+    @keyframes wag{
+      0%,100%{transform: rotate(10deg)}
+      50%{transform: rotate(-12deg)}
+    }
+    .spark{
+      animation: sparkle 2.4s ease-in-out infinite;
+      transform-origin:center;
+      opacity:.55;
+    }
+    .spark:nth-child(2){animation-delay:-.8s}
+    .spark:nth-child(3){animation-delay:-1.6s}
+    @keyframes sparkle{
+      0%,100%{transform: scale(.92); opacity:.30}
+      50%{transform: scale(1.05); opacity:.70}
+    }
+
+    /* Method sections */
+    section.method{scroll-margin-top:14px}
+    .methodTitle{
+      display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap;
+      margin:0;
+    }
+    .tag{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid rgba(169,195,218,.18);
+      background:rgba(6,18,28,.22);
+      font-family:var(--mono);
+      font-size:12px;
+      color:var(--muted);
+    }
+    .tag .dot{
+      width:8px;height:8px;border-radius:50%;
+      background:var(--accent);
+      box-shadow: 0 0 0 4px rgba(127,231,255,.12);
+    }
+    .tag.hot .dot{background:var(--hot); box-shadow: 0 0 0 4px rgba(255,127,154,.12)}
+    .tag.green .dot{background:var(--accent2); box-shadow: 0 0 0 4px rgba(139,255,176,.12)}
+
+    /* Print */
+    @media print{
+      body{background:#fff;color:#111}
+      header,.card,.footer{box-shadow:none}
+      .bubbles,.mascot{display:none}
+      .card{border-color:#ddd}
+      .box{border-color:#e6e6e6;background:#fafafa}
+      .step{border-color:#e6e6e6;background:#fff}
+      a{color:#0b6}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <!-- subtle background bubbles -->
+      <svg class="bubbles" viewBox="0 0 1000 280" preserveAspectRatio="none" aria-hidden="true">
+        <circle cx="120" cy="250" r="10"></circle>
+        <circle cx="320" cy="270" r="14"></circle>
+        <circle cx="640" cy="255" r="9"></circle>
+        <circle cx="820" cy="265" r="12"></circle>
+        <circle cx="920" cy="275" r="8"></circle>
+      </svg>
+
+      <div class="topRow">
+        <div class="mascot" title="Official Coeur d'Alene Lake Trout Inspector (self-appointed)">
+          <svg viewBox="0 0 520 240" aria-label="Animated trout mascot">
+            <defs>
+              <linearGradient id="gWater" x1="0" x2="1">
+                <stop offset="0" stop-color="rgba(127,231,255,.14)"/>
+                <stop offset="1" stop-color="rgba(139,255,176,.10)"/>
+              </linearGradient>
+              <linearGradient id="gFish" x1="0" x2="1">
+                <stop offset="0" stop-color="#b7f2ff"/>
+                <stop offset="1" stop-color="#6fd6ff"/>
+              </linearGradient>
+              <linearGradient id="gFin" x1="0" x2="1">
+                <stop offset="0" stop-color="#8bffb0"/>
+                <stop offset="1" stop-color="#7fe7ff"/>
+              </linearGradient>
+            </defs>
+
+            <!-- water -->
+            <rect x="0" y="0" width="520" height="240" fill="url(#gWater)"/>
+            <path d="M0,150 C80,130 130,170 210,150 C300,125 350,180 520,145 L520,240 L0,240 Z"
+                  fill="rgba(7,22,34,.35)"/>
+
+            <!-- sparkles -->
+            <g class="spark">
+              <circle cx="70" cy="60" r="4" fill="rgba(127,231,255,.65)"/>
+              <circle cx="92" cy="78" r="2.5" fill="rgba(139,255,176,.6)"/>
+            </g>
+            <g class="spark">
+              <circle cx="440" cy="62" r="4" fill="rgba(127,231,255,.55)"/>
+              <circle cx="462" cy="84" r="2.6" fill="rgba(255,127,154,.5)"/>
+            </g>
+            <g class="spark">
+              <circle cx="310" cy="44" r="3.4" fill="rgba(139,255,176,.55)"/>
+              <circle cx="332" cy="64" r="2.2" fill="rgba(127,231,255,.5)"/>
+            </g>
+
+            <!-- fish -->
+            <g class="swim" transform="translate(40,20)">
+              <!-- body -->
+              <ellipse cx="240" cy="115" rx="150" ry="55" fill="url(#gFish)" opacity=".95"/>
+              <ellipse cx="260" cy="112" rx="110" ry="38" fill="rgba(7,22,34,.12)"/>
+
+              <!-- spots -->
+              <g opacity=".35">
+                <circle cx="190" cy="110" r="5" fill="rgba(7,22,34,.35)"/>
+                <circle cx="225" cy="92" r="4" fill="rgba(7,22,34,.35)"/>
+                <circle cx="255" cy="122" r="3.8" fill="rgba(7,22,34,.35)"/>
+                <circle cx="290" cy="98" r="4.4" fill="rgba(7,22,34,.35)"/>
+                <circle cx="320" cy="120" r="3.5" fill="rgba(7,22,34,.35)"/>
+              </g>
+
+              <!-- head -->
+              <ellipse cx="130" cy="118" rx="55" ry="42" fill="url(#gFish)"/>
+              <circle cx="110" cy="110" r="7" fill="rgba(7,22,34,.75)"/>
+              <circle cx="108" cy="108" r="2.5" fill="rgba(255,255,255,.8)"/>
+              <path d="M90,130 C110,142 128,142 148,130" fill="none" stroke="rgba(7,22,34,.45)" stroke-width="4" stroke-linecap="round"/>
+
+              <!-- fin -->
+              <path d="M220,72 C250,90 270,90 300,72 C290,105 250,110 220,72 Z" fill="url(#gFin)" opacity=".9"/>
+
+              <!-- tail -->
+              <g class="tail">
+                <path d="M385,115 L455,75 L438,120 L455,165 L385,115 Z" fill="url(#gFin)" opacity=".92"/>
+                <path d="M395,115 L445,92" stroke="rgba(7,22,34,.18)" stroke-width="5" stroke-linecap="round"/>
+                <path d="M395,115 L445,138" stroke="rgba(7,22,34,.18)" stroke-width="5" stroke-linecap="round"/>
+              </g>
+            </g>
+
+            <!-- caption -->
+            <text x="18" y="226" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12"
+                  fill="rgba(233,243,255,.75)">
+              “I was THIS close to becoming a legend.” — Trout (probably)
+            </text>
+          </svg>
+        </div>
+
+        <div style="flex:1 1 420px; min-width: 260px;">
+          <div class="badge">CDA LAKE • FRESH CATCH • 3 METHODS • MAX FLAVOR</div>
+          <h1>How to Cook Fresh-Caught Trout (Oven • Grill • Pan)</h1>
+          <p class="sub">
+            Coeur d’Alene Lake trout is the kind of dinner that makes you feel like you should tell a story about it.
+            So we will. Three methods below, each with <b>what to buy</b>, <b>how to prep</b>, and <b>cooking tips</b>.
+            You’ll be eating in under an hour — even if you pause to brag about “the one that almost snapped the line.”
+          </p>
+
+          <div class="quickNav">
+            <a class="pill" href="#oven">🔥 Oven Roast</a>
+            <a class="pill" href="#grill">♨️ Grill</a>
+            <a class="pill" href="#pan">🍳 Pan Sear</a>
+            <a class="pill" href="#basics">🧼 Prep Basics</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="grid">
+      <!-- BASICS -->
+      <section class="card" id="basics" aria-label="Prep basics">
+        <div class="cardHeader">
+          <h2>Prep Basics (applies to all 3 methods)</h2>
+          <div class="hint">less mess • more flex</div>
+        </div>
+        <div class="cardBody">
+          <div class="twoCol">
+            <div class="box">
+              <h3>What to buy</h3>
+              <ul>
+                <li><b>Trout</b> (whole or fillets). If whole: ask for <b>gutted + scaled</b> if possible.</li>
+                <li><b>Salt + pepper</b> (kosher salt is a cheat code).</li>
+                <li><b>Lemon</b> + <b>butter</b> (or olive oil).</li>
+                <li><b>Garlic</b> (fresh or powder), <b>fresh dill</b> or parsley.</li>
+                <li><b>Optional flavor squad:</b> paprika, Cajun seasoning, capers, honey, soy sauce.</li>
+                <li><b>Foil or parchment</b>, paper towels.</li>
+                <li><b>Instant-read thermometer</b> (makes you look like a pro even if you say “bruh” a lot).</li>
+              </ul>
+            </div>
+            <div class="box">
+              <h3>How to prepare</h3>
+              <ul>
+                <li><b>Rinse quickly</b> (cold water), then <b>pat dry</b> like it owes you money.</li>
+                <li><b>Pin bones:</b> run your fingers along the fillet; pull with tweezers/pliers.</li>
+                <li><b>Skin on</b> is your friend (protects the fish, crisps up, reduces sticking).</li>
+                <li><b>Season simply:</b> salt + pepper + lemon + butter is already elite.</li>
+                <li><b>Rest 10 min</b> after seasoning if you can — the salt does its magic.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="callout">
+            <b>Food safety note:</b> Trout is done when it flakes easily and reaches about <b>145°F / 63°C</b> at the thickest part.
+            Pull it a hair early (140–145°F) and let it rest — carryover heat finishes the job.
+          </div>
+
+          <p class="fine" style="margin-top:12px">
+            CDA Lake story rule: if someone asks “How was it?” you must answer:
+            <span class="kbd">“Clean signal. Dirty bass.”</span>
+            (It means “amazing.”)
+          </p>
+        </div>
+      </section>
+
+      <!-- QUICK CHEAT SHEET -->
+      <aside class="card" aria-label="Quick cheat sheet">
+        <div class="cardHeader">
+          <h2>Quick Cheat Sheet</h2>
+          <div class="hint">save this brain-space</div>
+        </div>
+        <div class="cardBody">
+          <div class="box">
+            <h3>Trout doneness + timing</h3>
+            <ul>
+              <li><b>Fillets (1-inch thick):</b> usually 8–12 min oven, 6–10 min grill, 6–9 min pan.</li>
+              <li><b>Whole trout:</b> usually 16–22 min oven, 10–14 min grill (foil),  — pan is tricky for whole.</li>
+              <li><b>Visual cue:</b> turns opaque, flakes in thickest part, juices look clear.</li>
+              <li><b>Thermometer cue:</b> 145°F / 63°C at thickest point.</li>
+            </ul>
+          </div>
+          <div class="box" style="margin-top:12px">
+            <h3>Three “never dry it out” tricks</h3>
+            <ul>
+              <li><b>Pat dry first</b> (wet fish steams instead of browning).</li>
+              <li><b>Skin-side heat</b> first for grill/pan; it protects the flesh.</li>
+              <li><b>Don’t overflip</b> — trout is fragile, like your favorite hoodie.</li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- OVEN -->
+    <section class="card method" id="oven" style="margin-top:16px">
+      <div class="cardHeader">
+        <div>
+          <div class="methodTitle">
+            <h2>🔥 Oven Trout (Roast / Foil-Packet)</h2>
+            <span class="tag"><span class="dot"></span> easiest + forgiving</span>
+          </div>
+        </div>
+        <div class="hint">425°F • 10–20 min</div>
+      </div>
+
+      <div class="cardBody">
+        <div class="twoCol">
+          <div class="box">
+            <h3>What to buy</h3>
+            <ul>
+              <li>Butter (or olive oil), lemon, garlic</li>
+              <li>Dill/parsley + optional: sliced onion</li>
+              <li>Foil or parchment + baking sheet</li>
+              <li>Optional: capers (for “fancy without trying”)</li>
+            </ul>
+          </div>
+
+          <div class="box">
+            <h3>How to prepare</h3>
+            <ul>
+              <li><b>Preheat</b> oven to <b>425°F</b>.</li>
+              <li>Line sheet with foil/parchment.</li>
+              <li>Pat fish dry, season with salt/pepper.</li>
+              <li>Top with butter, lemon slices, garlic, herbs.</li>
+              <li><b>Foil packet option:</b> fold edges to seal for extra moisture.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="box" style="margin-top:14px">
+          <h3>Cook steps</h3>
+          <div class="steps">
+            <div class="step"><p>
+              Place trout on the lined sheet (skin-side down if you have skin). Add butter/lemon/herbs on top.
+            </p></div>
+            <div class="step"><p>
+              Roast <b>10–12 minutes</b> for fillets (about 1" thick). Whole trout: <b>16–22 minutes</b>.
+            </p></div>
+            <div class="step"><p>
+              Check thickest part: flakes easily and/or hits <b>145°F</b>. If it’s shy, give it 2 more minutes.
+            </p></div>
+            <div class="step"><p>
+              Rest <b>3 minutes</b>. Serve with lemon squeeze. Pretend you’re on a cooking show. Optional.
+            </p></div>
+          </div>
+        </div>
+
+        <div class="callout">
+          <b>Cooking tips:</b>
+          <ul>
+            <li><b>Want crispy edges?</b> Don’t seal the foil; leave it open like a little fish “canoe.”</li>
+            <li><b>Want super juicy?</b> Seal the foil packet tight and add 1 tbsp water/white wine.</li>
+            <li><b>Flavor boost:</b> Sprinkle smoked paprika + tiny pinch of brown sugar (CDA campfire vibes).</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- GRILL -->
+    <section class="card method" id="grill" style="margin-top:16px">
+      <div class="cardHeader">
+        <div>
+          <div class="methodTitle">
+            <h2>♨️ Grill Trout (Skin-Crisp or Foil-Board)</h2>
+            <span class="tag hot"><span class="dot"></span> smoky + brag-worthy</span>
+          </div>
+        </div>
+        <div class="hint">med-high • 6–14 min</div>
+      </div>
+
+      <div class="cardBody">
+        <div class="twoCol">
+          <div class="box">
+            <h3>What to buy</h3>
+            <ul>
+              <li>High-heat oil (avocado/canola) + butter</li>
+              <li>Lemon, garlic, herbs</li>
+              <li><b>Grill basket</b> OR <b>foil</b> (recommended if fish is delicate)</li>
+              <li>Optional: cedar plank (if you want “lake lodge energy”)</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>How to prepare</h3>
+            <ul>
+              <li>Pat fish dry; oil the fish lightly (especially skin).</li>
+              <li>Season: salt/pepper + garlic + herbs.</li>
+              <li>Preheat grill to <b>medium-high</b> (around 400–450°F if you have a gauge).</li>
+              <li>Oil the grates (tongs + oiled paper towel = no-stick spell).</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="box" style="margin-top:14px">
+          <h3>Cook steps (two options)</h3>
+
+          <div class="twoCol">
+            <div class="box">
+              <h3>Option A: Direct grill (crispy skin)</h3>
+              <div class="steps">
+                <div class="step"><p>Place trout <b>skin-side down</b>. Close lid.</p></div>
+                <div class="step"><p>Cook <b>4–6 min</b> without moving it. Let the skin release naturally.</p></div>
+                <div class="step"><p>Flip once, cook <b>2–4 min</b> more until it flakes / hits 145°F.</p></div>
+              </div>
+              <p class="fine">Pro move: if it sticks, it’s not ready. Patience is a seasoning.</p>
+            </div>
+
+            <div class="box">
+              <h3>Option B: Foil packet (nearly un-failable)</h3>
+              <div class="steps">
+                <div class="step"><p>Place trout on foil, add butter + lemon + herbs, seal edges.</p></div>
+                <div class="step"><p>Grill <b>8–12 min</b> (fillets) or <b>10–14 min</b> (whole smaller fish).</p></div>
+                <div class="step"><p>Open carefully (steam!). Finish with lemon squeeze.</p></div>
+              </div>
+              <p class="fine">This is the method for “I’m hungry now” energy.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout">
+          <b>Cooking tips:</b>
+          <ul>
+            <li><b>Do not over-flip</b> trout. One flip is enough. Two flips is a negotiation. Three flips is regret.</li>
+            <li><b>Sweet-savory glaze:</b> brush with 1 tsp honey + 1 tsp soy + 1 tsp lemon (last 2 minutes).</li>
+            <li><b>Cedar plank:</b> soak plank 1–2 hours, grill fish on plank 12–18 min depending on thickness.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAN -->
+    <section class="card method" id="pan" style="margin-top:16px">
+      <div class="cardHeader">
+        <div>
+          <div class="methodTitle">
+            <h2>🍳 Pan-Seared Trout (Crispy Skin, Fast)</h2>
+            <span class="tag green"><span class="dot"></span> quickest weeknight flex</span>
+          </div>
+        </div>
+        <div class="hint">med • 6–9 min</div>
+      </div>
+
+      <div class="cardBody">
+        <div class="twoCol">
+          <div class="box">
+            <h3>What to buy</h3>
+            <ul>
+              <li>Neutral oil + butter</li>
+              <li>Lemon, garlic</li>
+              <li>Optional: flour (light dusting = extra crisp)</li>
+              <li>Optional sauce: capers + butter (instant “restaurant”)</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>How to prepare</h3>
+            <ul>
+              <li>Pat fillets <b>very dry</b>. (This is 80% of crispiness.)</li>
+              <li>Season both sides with salt/pepper.</li>
+              <li>Optional: dust flesh side lightly with flour; shake off extra.</li>
+              <li>Heat pan to medium; add oil until it shimmers.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="box" style="margin-top:14px">
+          <h3>Cook steps</h3>
+          <div class="steps">
+            <div class="step"><p>
+              Place fillets <b>skin-side down</b>. Press gently for 10 seconds (prevents curling).
+            </p></div>
+            <div class="step"><p>
+              Cook <b>3–5 min</b> skin-side down (don’t poke it like it’s a touchscreen).
+            </p></div>
+            <div class="step"><p>
+              Flip once. Cook <b>1–3 min</b> more until flakes / 145°F.
+            </p></div>
+            <div class="step"><p>
+              Kill heat. Add 1 tbsp butter + lemon juice. Spoon over top.
+            </p></div>
+          </div>
+        </div>
+
+        <div class="callout">
+          <b>Cooking tips:</b>
+          <ul>
+            <li><b>Skin stick fix:</b> pan wasn’t hot enough OR fish wasn’t dry enough. Pat-dry harder next time.</li>
+            <li><b>Pan sauce (30 seconds):</b> butter + capers + lemon + a splash of water. Stir. Done.</li>
+            <li><b>Spice path:</b> Cajun seasoning on flesh side only, so the skin stays crisp and clean.</li>
+          </ul>
+        </div>
+
+        <p class="fine">
+          CDA Lake folklore: if your kitchen smells amazing, that’s not “fishy” — that’s <span class="kbd">victory vapor</span>.
+        </p>
+      </div>
+    </section>
+
+    <div class="footer">
+      <div>
+        <div class="badge">SERVING IDEAS</div>
+        <div class="fine" style="margin-top:8px">
+          Pair with roasted potatoes, rice, or a quick salad. If you’ve got extra lemon + herbs, you’ve basically got “chef status.”
+        </div>
+      </div>
+      <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center">
+        <span class="kbd">Target temp: 145°F</span>
+        <span class="kbd">Rest: 3 minutes</span>
+        <span class="kbd">Pat dry = crispy</span>
+        <span class="kbd">One flip only</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Tiny “lake breeze” parallax for the mascot (subtle, mobile-friendly)
+    (function(){
+      const mascot = document.querySelector('.mascot');
+      if(!mascot) return;
+
+      const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if(prefersReduced) return;
+
+      let raf = null;
+      function onMove(e){
+        const r = mascot.getBoundingClientRect();
+        const cx = r.left + r.width/2;
+        const cy = r.top + r.height/2;
+        const x = (e.clientX - cx) / r.width;
+        const y = (e.clientY - cy) / r.height;
+
+        if(raf) cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(()=>{
+          mascot.style.transform = `translateY(${y*2}px) rotate(${x*1.2}deg)`;
+        });
+      }
+
+      window.addEventListener('pointermove', onMove, {passive:true});
+      window.addEventListener('pointerleave', ()=>{ mascot.style.transform=''; }, {passive:true});
+    })();
+  </script>
+</body>
+</html>
